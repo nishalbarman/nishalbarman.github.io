@@ -16,11 +16,6 @@ function App() {
       )}
       <AllRoutes />
       <Footer />
-      {/* <img
-        src={`data:${services[0]?.image?.mimetype};base64,${arrayBufferToBase64(
-          services[0]?.image?.data.data
-        )}`}
-      /> */}
     </>
   );
 }
