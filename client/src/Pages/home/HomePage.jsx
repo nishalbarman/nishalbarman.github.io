@@ -12,7 +12,7 @@ import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./HomePage.module.css";
 import axios from "axios";
-import { ImSpinner10 } from "react-icons/im";
+import { ImSortAlphaAsc, ImSpinner10 } from "react-icons/im";
 import { useToast } from "@chakra-ui/react";
 import my_image from "../../Images/myimage.jpg";
 import secret_message from "../../Images/projects/secret_message.png";
@@ -21,6 +21,9 @@ import auto_part from "../../Images/projects/auto_part.png";
 import consultant from "../../Images/projects/consultant.png";
 import { setRefer } from "../../Redux/smoothscroll/action-creators";
 import { useSelector } from "react-redux";
+import GitHubCalendar from "react-github-calendar";
+import Typewriter from "typewriter-effect";
+import resume_pdf from "../../Resume/Nishal_Resume.pdf";
 
 function HomePage() {
   const setRef = useSelector((state) => state.refer_reducer);
@@ -129,6 +132,10 @@ function HomePage() {
   const projectRef = useRef();
   const contactRef = useRef();
 
+  // word animation starts here
+
+  // word animation ends
+
   useEffect(() => {
     if (typeof setRef === "function")
       setRef(homeRef, aboutRef, skillsRef, projectRef, contactRef);
@@ -142,11 +149,31 @@ function HomePage() {
         id="home"
         className={`${styles.section_wrapper} ${styles.very_first_info}`}>
         <div className={styles.details_wrapper} ref={homeRef}>
-          <p
-            id="user-detail-name"
-            className={`${styles.first_sec_heading} ${styles.name}`}>
-            Hey, I am <span className={styles.name_animate}>Nishal Barman</span>
-          </p>
+          <div>
+            <p
+              id="user-detail-name"
+              className={`${styles.first_sec_heading} ${styles.name}`}>
+              Hey,{" "}
+            </p>
+            <div>
+              <Typewriter
+                options={{
+                  loop: true,
+                }}
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString("Welcome")
+                    .pauseFor(1000)
+                    .deleteAll()
+                    .typeString("I am Nishal Barman")
+                    .pauseFor(2000)
+                    .deleteAll()
+                    .start();
+                }}
+              />
+            </div>
+          </div>
+
           <p id="user-detail-intro">
             An aspiring Full-Stack Web Developer based in India,working on
             frontend and backend Technologies including HTML, CSS, JavaScript,
@@ -155,14 +182,20 @@ function HomePage() {
 
           {/* download resume button */}
           <Button
+            id="resume-button-2"
             onClick={() => {
-              projectRef?.current?.scrollIntoView({ behavior: "smooth" });
+              // projectRef?.current?.scrollIntoView({ behavior: "smooth" });
+              const link = document.createElement("a");
+              link.download = "Nishal_Resume.pdf";
+              link.href = resume_pdf;
+              link.click();
+              window.open(resume_pdf, "_blank");
             }}
             colorScheme="twitter"
             py={"1.7rem"}
             w={"170px"}
             my={"1rem"}>
-            Projects
+            Resume
           </Button>
         </div>
       </div>
@@ -194,123 +227,133 @@ function HomePage() {
       <Box my={"80px"}></Box>
 
       {/* skills card */}
-      <div id="skills" ref={skillsRef} className={styles.services_wrapper}>
+      <div id="skills" ref={skillsRef} className={`${styles.services_wrapper}`}>
         <p className={styles.service_heading}>List of Tech & Tools I Used</p>
-        <div className={`${styles.grid_section} ${styles.skill_grid}`}>
-          <div className={styles.skills_card}>
+        <div className={`${styles.grid_section} ${styles.skill_grid} `}>
+          <div className={`${styles.skills_card} skills-card`}>
             <img
+              className="skills-card-img"
               src="https://christianbiadnes.com/assets/html5-e1e4ccb3.svg"
               alt=""
             />
-            <p>HTML</p>
+            <p className="skills-card-name">HTML</p>
             <p>
               HTML is a markup language used by the browser to manipulate text,
               images, and other content, in order to display it in the required
               format.
             </p>
           </div>
-          <div className={styles.skills_card}>
+          <div className={`${styles.skills_card} skills-card`}>
             <img
+              className="skills-card-img"
               src="https://christianbiadnes.com/assets/css3-b4de7545.svg"
               alt=""
             />
-            <p>CSS</p>
+            <p className="skills-card-name">CSS</p>
             <p>
               Cascading Style Sheets is a style sheet language used for
               describing the presentation of a document written in a markup
               language such as HTML or XML.
             </p>
           </div>
-          <div className={styles.skills_card}>
+          <div className={`${styles.skills_card} skills-card`}>
             <img
+              className="skills-card-img"
               src="https://christianbiadnes.com/assets/javascript-348a59a3.svg"
               alt=""
             />
-            <p>JavaScript</p>
+            <p className="skills-card-name">JavaScript</p>
             <p>
               JavaScript is a scripting language that enables you to create
               dynamically updating content, control multimedia, animate images,
               and pretty much everything else.
             </p>
           </div>
-          <div className={styles.skills_card}>
+          <div className={`${styles.skills_card} skills-card`}>
             <img
+              className="skills-card-img"
               src="https://christianbiadnes.com/assets/react-861e5e86.svg"
               alt=""
             />
-            <p>React JS</p>
+            <p className="skills-card-name">React JS</p>
             <p>
               JavaScript is a scripting language that enables you to create
               dynamically updating content, control multimedia, animate images,
               and pretty much everything else.
             </p>
           </div>
-          <div className={styles.skills_card}>
+          <div className={`${styles.skills_card} skills-card`}>
             <img
+              className="skills-card-img"
               src="https://redux.js.org/img/redux-logo-landscape.png"
               alt=""
             />
-            <p>Redux</p>
+            <p className="skills-card-name">Redux</p>
             <p>
               JavaScript is a scripting language that enables you to create
               dynamically updating content, control multimedia, animate images,
               and pretty much everything else.
             </p>
           </div>
-          <div className={styles.skills_card}>
+          <div className={`${styles.skills_card} skills-card`}>
             <img
+              className="skills-card-img"
               src="https://youteam.io/blog/wp-content/uploads/2022/04/expressjs_logo.png"
               alt=""
             />
-            <p>Express</p>
+            <p className="skills-card-name">Express</p>
             <p>
               JavaScript is a scripting language that enables you to create
               dynamically updating content, control multimedia, animate images,
               and pretty much everything else.
             </p>
           </div>
-          <div className={styles.skills_card}>
+          <div className={`${styles.skills_card} skills-card`}>
             <img
+              className="skills-card-img"
               src="https://i0.wp.com/tw.alphacamp.co/wp-content/uploads/2022/12/60e828d815c1ffbc7ee86743_5da911dbd21c06c44f5791b6_Nodejs-blog-feature-img.jpeg?fit=750%2C500&ssl=1"
               alt=""
             />
-            <p>Node JS</p>
+            <p className="skills-card-name">Node JS</p>
             <p>
               JavaScript is a scripting language that enables you to create
               dynamically updating content, control multimedia, animate images,
               and pretty much everything else.
             </p>
           </div>
-          <div className={styles.skills_card}>
+          <div className={`${styles.skills_card} skills-card`}>
             <img
+              className="skills-card-img"
               src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1200px-Redis_Logo.svg.png"
               alt=""
             />
-            <p>Redis</p>
+            <p className="skills-card-name">Redis</p>
             <p>
               JavaScript is a scripting language that enables you to create
               dynamically updating content, control multimedia, animate images,
               and pretty much everything else.
             </p>
           </div>
-          <div className={styles.skills_card}>
+          <div className={`${styles.skills_card} skills-card`}>
             <img
+              className="skills-card-img"
               src="https://i1.wp.com/www.ux-republic.com/wp-content/uploads/2018/03/socket.png?fit=375%2C375&ssl=1"
               alt=""
             />
-            <p>Socket.io</p>
+            <p className="skills-card-name">Socket.io</p>
             <p>
               JavaScript is a scripting language that enables you to create
               dynamically updating content, control multimedia, animate images,
               and pretty much everything else.
             </p>
           </div>
-          <div className={styles.skills_card}>
+          <div className={`${styles.skills_card} skills-card`}>
             <img
+              className="skills-card-img"
               src="https://christianbiadnes.com/assets/github-c97b06ab.svg"
               alt=""
             />
-            <p>GitHub</p>
+            <p className="skills-card-name">GitHub</p>
             <p>
               JavaScript is a scripting language that enables you to create
               dynamically updating content, control multimedia, animate images,
@@ -354,29 +397,34 @@ function HomePage() {
             <img src={secret_message} alt="" style={{ marginBottom: "30px" }} />
             <div className={styles.service_body}>
               <p className="project-title">
-                <a href="https://secret-msg-test.netlify.app/" target="_blank">
+                <a
+                  className="project-deployed-link"
+                  href="https://secret-msg-test.netlify.app/"
+                  target="_blank">
                   Secret Messaging
                 </a>
               </p>
-              <p>
+              <a
+                className="project-github-link"
+                href="https://github.com/nishalbarman/secret-message-react"
+                target="_blank">
+                Gitub Link
+              </a>
+              <p className="project-description">
                 A comprehensive full-stack project that enables users to
                 register and share their unique links to receive anonymous
                 messages.
               </p>
-              {/* <ul className={`${styles.list_item} project-description`}>
-                <li>
-                  Implemented robust user authentication using JWT for secure
-                  access.{" "}
-                </li>
-                <li>
-                  Utilized an Express backend coupled with MongoDB for efficient
-                  data storage.
-                </li>
-                <li>
-                  Developed the front-end using ReactJS with elements of
-                  Bootstrap for enhanced user experience.
-                </li>
-              </ul> */}
+
+              <div className={`${styles.tech_stack_outer} project-tech-stack`}>
+                <p>Tech Stack</p>
+                <ul className="">
+                  <li>ReactJS</li>
+                  <li>ExpressJS</li>
+                  <li>MongoDB</li>
+                  <li>socket.io</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className={`${styles.service_card} project-card`}>
@@ -384,74 +432,149 @@ function HomePage() {
             <div className={styles.service_body}>
               <p className="project-title">
                 <a
+                  className="project-deployed-link"
                   href="https://nishalbarman.github.io/react-newss-app/"
                   target="_blank">
                   Axom News
                 </a>
               </p>
-              <p>
+              <a
+                className="project-github-link"
+                href="https://github.com/nishalbarman/react-newss-app"
+                target="_blank">
+                Gitub Link
+              </a>
+              <p className="project-description">
                 Crafted a single-page fronend project using ReactJS. Leveraged
                 the Context API for state management, ensuring seamless data
                 handling.
               </p>
-              {/* <ul className={`${styles.list_item} project-description`}>
-                <li>
-                  Implemented real-time data retrieval from external APIs and
-                  displayed it in a user-freindly interface.
-                </li>
-              </ul> */}
+              <div className={`${styles.tech_stack_outer} project-tech-stack`}>
+                <p>Tech Stack</p>
+                <ul className="">
+                  <li>ReactJS</li>
+                  <li>Json Mock Server</li>
+                  <li>HTML, CSS</li>
+                  <li>Swiper JS</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className={`${styles.service_card} project-card`}>
             <img src={auto_part} alt="" style={{ marginBottom: "30px" }} />
             <div className={styles.service_body}>
               <p className="project-title">
-                <a href="https://auto-part.netlify.app/" target="_blank">
+                <a
+                  className="project-deployed-link"
+                  href="https://auto-part.netlify.app/"
+                  target="_blank">
                   Online Auto Part Shop
                 </a>
               </p>
-              <p>
+              <a
+                className="project-github-link"
+                href="https://github.com/nishalbarman/online-auto-part-shop"
+                target="_blank">
+                Gitub Link
+              </a>
+              <p className="project-description">
                 Collaboratively led a team of four members in the end-to-end
                 creation of a website dedicated to online auto part sales.
               </p>
-              {/* <ul className={`${styles.list_item} project-description`}>
-                <li>
-                  Employed vanilla JavaScript, CSS, HTML for dynamic and
-                  responsive web design
-                </li>
-                <li>
-                  Utilized a JSON mock Server API to source and display product
-                  data.
-                </li>
-                <li>
-                  Incorporated a search functionality with debouncing to
-                  optimize API calls.
-                </li>
-              </ul> */}
+              <div className={`${styles.tech_stack_outer} project-tech-stack`}>
+                <p>Tech Stack</p>
+                <ul className="">
+                  <li>Vannila JavaScript</li>
+                  <li>Json Mock Server</li>
+                  <li>HTML, CSS</li>
+                  <li>Splide</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className={`${styles.service_card} project-card`}>
             <img src={consultant} alt="" style={{ marginBottom: "30px" }} />
             <div className={styles.service_body}>
               <p className="project-title">
-                <a href="https://webconsultant-s.netlify.app/" target="_blank">
+                <a
+                  className="project-deployed-link"
+                  href="https://webconsultant-s.netlify.app/"
+                  target="_blank">
                   WebService Consultant
                 </a>
               </p>
-              <p>
+              <a
+                className="project-github-link"
+                href="https://github.com/nishalbarman/webservice-consultant"
+                target="_blank">
+                Gitub Link
+              </a>
+              <p className="project-description">
                 Single-page fully responsive fronend project using ReactJS with
                 a simple backend to recieve the messages.
               </p>
-              {/* <ul className={`${styles.list_item} project-description`}>
-                
-                <li>
-                  Crafted a single-page fronend project using ReactJS with a
-                  simple backend with Expres.
-                </li>
-              </ul> */}
+              <div className={`${styles.tech_stack_outer} project-tech-stack`}>
+                <p>Tech Stack</p>
+                <ul className="">
+                  <li>ReactJS</li>
+                  <li>ExpressJS</li>
+                  <li>ChakraUI</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <Box my={"80px"}></Box>
+
+      {/* github calendar and sticks */}
+
+      <div id="github-stats" className={styles.services_wrapper}>
+        <p className={styles.service_heading}>Github Stats</p>
+        {/* <div className="" style={{ width: "100%" }}> */}
+        <GitHubCalendar
+          username="nishalbarman"
+          labels={{
+            totalCount: "{{count}} contributions in the last half year",
+          }}
+        />
+        <div className={`${styles.github_grid_section}`}>
+          <picture id="github-streak-stats">
+            <source
+              srcSet="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcSet="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img src="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D" />
+          </picture>
+          <picture id="github-top-langs">
+            <source
+              srcSet="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=donut-vertical"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcSet="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=donut-vertical"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=donut-vertical" />
+          </picture>
+          <picture id="github-stats-card">
+            <source
+              srcSet="https://github-readme-stats.vercel.app/api?username=nishalbarman)"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcSet="https://github-readme-stats.vercel.app/api?username=nishalbarman&show_icons=true"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img src="https://github-readme-stats.vercel.app/api?username=nishalbarman" />
+          </picture>
+        </div>
+        {/* </div> */}
       </div>
 
       <Box my={"45px"}></Box>

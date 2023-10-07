@@ -70,12 +70,11 @@ function Footer() {
             style={{ color: "white" }}
           />
         </div>
-        <div className="footer_bottom">
+        {/* <div className="footer_bottom">
           <div className="logo">
             <h1 className="logo-text" style={{ color: "white" }}>
               Nishal Barman
             </h1>
-            {/* <img src={webLogo} alt="bartalap.in" style={{ height: "100px" }} /> */}
           </div>
           <div className="bottom-copyright">
             <p>
@@ -91,7 +90,7 @@ function Footer() {
             </p>
             <p>All rights reserved.</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -33,6 +33,12 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
   const location = useLocation();
 
   window.addEventListener("scroll", () => {
+    if (window.scrollY === 0) {
+      setColorchange(false);
+    } else {
+      setColorchange(true);
+    }
+
     let st = window.scrollY || document.documentElement.scrollTop;
     if (st > lastScrollTop) {
       // downscroll code
@@ -89,11 +95,12 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
             navbarHide ? styles.navbar_animate : ""
           }`}
           style={
-            isWhiteBackground || colorChange
+            colorChange
               ? {
                   backgroundColor: "white",
                   top: "0",
                   boxShadow: "rgba(17, 17, 26, 0.1) 0px 1px 0px",
+                  color: "black",
                 }
               : {}
           }>
@@ -179,6 +186,7 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
             </div>
 
             <div
+              id="resume-button-1"
               className={`${styles.wave_wrapper} nav-link resume`}
               onClick={handleResumeClick}>
               {/* <a href={resume_pdf} target="_blank" download> */}
