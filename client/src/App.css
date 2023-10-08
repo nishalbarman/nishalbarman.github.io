@@ -1,3 +1,18 @@
+.App {
+  backdrop-filter: blur(20px);
+}
+
 .footer i {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 850px) {
+  .App > div:not(#home) {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+
+  .fourth_footer {
+    margin: auto;
+  }
 }

@@ -14,7 +14,9 @@ function App() {
       {location.pathname !== "/login" && location.pathname !== "/signup" && (
         <Navbar isWhiteBackground={isWhite} isOfferVisible={!true} /> //isWhite
       )}
-      <AllRoutes />
+      <div className="App">
+        <AllRoutes />
+      </div>
       <Footer />
     </>
   );

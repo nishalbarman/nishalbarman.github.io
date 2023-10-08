@@ -200,7 +200,8 @@
 }
 
 .logo {
-  color: white;
+  /* color: white; */
+  color: rgb(0, 163, 255) !important;
   font-weight: 600;
   font-size: 30px;
   text-shadow: 0px 0px 10px black;
@@ -226,7 +227,7 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1000px) {
+/* @media only screen and (max-width: 1000px) {
   .desk_links {
     display: none;
   }
@@ -252,4 +253,4 @@
     justify-content: space-between;
     padding: 6%;
   }
-}
+} */

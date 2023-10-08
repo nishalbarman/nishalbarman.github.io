@@ -148,55 +148,55 @@ function HomePage() {
       <div
         id="home"
         className={`${styles.section_wrapper} ${styles.very_first_info}`}>
-        <div className={styles.details_wrapper} ref={homeRef}>
-          <div>
-            <p
-              id="user-detail-name"
-              className={`${styles.first_sec_heading} ${styles.name}`}>
-              Hey,{" "}
-            </p>
-            <div>
-              <Typewriter
-                options={{
-                  loop: true,
-                }}
-                onInit={(typewriter) => {
-                  typewriter
-                    .typeString("Welcome")
-                    .pauseFor(1000)
-                    .deleteAll()
-                    .typeString("I am Nishal Barman")
-                    .pauseFor(2000)
-                    .deleteAll()
-                    .start();
-                }}
-              />
+        <div className={styles.names_wrapper}>
+          <div className={styles.details_wrapper} ref={homeRef}>
+            <div className={styles.name_wrapper_inner}>
+              <p
+                id="user-detail-name"
+                className={`${styles.first_sec_heading} ${styles.name}`}>
+                Hey,{" "}
+              </p>
+              <div>
+                <Typewriter
+                  options={{
+                    loop: true,
+                  }}
+                  onInit={(typewriter) => {
+                    typewriter
+                      .typeString("Welcome")
+                      .pauseFor(1000)
+                      .deleteAll()
+                      .typeString("I am Nishal Barman")
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .start();
+                  }}
+                />
+              </div>
             </div>
+
+            <p id="user-detail-intro">
+              An aspiring Full-Stack Web Developer based in India,working on
+              frontend and backend Technologies including HTML, CSS, JavaScript,
+              React, Redux, NodeJS, ExpressJS & MongoDB.
+            </p>
+
+            {/* download resume button */}
+            <Button
+              id="resume-button-2"
+              onClick={() => {
+                const link = document.createElement("a");
+                link.download = "Nishal_Resume.pdf";
+                link.href = resume_pdf;
+                link.click();
+              }}
+              colorScheme="twitter"
+              py={"1.7rem"}
+              w={"170px"}
+              my={"1rem"}>
+              Resume
+            </Button>
           </div>
-
-          <p id="user-detail-intro">
-            An aspiring Full-Stack Web Developer based in India,working on
-            frontend and backend Technologies including HTML, CSS, JavaScript,
-            React, Redux, NodeJS, ExpressJS & MongoDB.
-          </p>
-
-          {/* download resume button */}
-          <Button
-            id="resume-button-2"
-            onClick={() => {
-              // projectRef?.current?.scrollIntoView({ behavior: "smooth" });
-              const link = document.createElement("a");
-              link.download = "Nishal_Resume.pdf";
-              link.href = resume_pdf;
-              link.click();
-              window.open(resume_pdf, "_blank");
-            }}
-            colorScheme="twitter"
-            py={"1.7rem"}
-            w={"170px"}
-            my={"1rem"}>
-            Resume
-          </Button>
         </div>
       </div>
 
@@ -204,14 +204,15 @@ function HomePage() {
       <div
         id="about"
         ref={aboutRef}
-        className={`${styles.section_wrapper} ${styles.about_section} "about section"`}>
+        className={`${styles.section_wrapper} ${styles.about_section} about section`}>
         <img
           className={`${styles.right_image} ${styles.profile_image} home-img`}
           src={my_image}
           alt=""
         />
         <div className={styles.details_wrapper}>
-          <p className={`${styles.introduction}`}>
+          <p style={{ fontSize: "28px", marginBottom: "-15px" }}>About Me</p>
+          <p id="user-detail-intro" className={`${styles.introduction}`}>
             Hey everyone, I am Nishal Barman from Assam, India. An Aspiring Full
             Stack Web Developer, with specialization in MERN Stack.
             Additionally,I have learnt Data Structures and gained expertise in
@@ -229,7 +230,7 @@ function HomePage() {
       {/* skills card */}
       <div id="skills" ref={skillsRef} className={`${styles.services_wrapper}`}>
         <p className={styles.service_heading}>List of Tech & Tools I Used</p>
-        <div className={`${styles.grid_section} ${styles.skill_grid} `}>
+        <div className={`${styles.skill_grid} `}>
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
@@ -324,7 +325,7 @@ function HomePage() {
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1200px-Redis_Logo.svg.png"
+              src="https://yt3.googleusercontent.com/ytc/APkrFKaHsr84SPxLOJUSMYHDmTQg0xzYdOn8wKHFaLxD8w=s900-c-k-c0x00ffffff-no-rj"
               alt=""
             />
             <p className="skills-card-name">Redis</p>
@@ -360,30 +361,6 @@ function HomePage() {
               and pretty much everything else.
             </p>
           </div>
-          {/* <div className={styles.skills_card}>
-            <img
-              src="https://christianbiadnes.com/assets/tailwind-d9011701.svg"
-              alt=""
-            />
-            <p>Tailwind</p>
-            <p>
-              JavaScript is a scripting language that enables you to create
-              dynamically updating content, control multimedia, animate images,
-              and pretty much everything else.
-            </p>
-          </div>
-          <div className={styles.skills_card}>
-            <img
-              src="https://christianbiadnes.com/assets/bootstrap-a9243f02.svg"
-              alt=""
-            />
-            <p>Bootstrap</p>
-            <p>
-              JavaScript is a scripting language that enables you to create
-              dynamically updating content, control multimedia, animate images,
-              and pretty much everything else.
-            </p>
-          </div> */}
         </div>
       </div>
 
@@ -533,6 +510,7 @@ function HomePage() {
       <div id="github-stats" className={styles.services_wrapper}>
         <p className={styles.service_heading}>Github Stats</p>
         {/* <div className="" style={{ width: "100%" }}> */}
+
         <GitHubCalendar
           username="nishalbarman"
           labels={{
@@ -540,7 +518,7 @@ function HomePage() {
           }}
         />
         <div className={`${styles.github_grid_section}`}>
-          <picture id="github-streak-stats">
+          <picture className={styles.pictures}>
             <source
               srcSet="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D"
               media="(prefers-color-scheme: dark)"
@@ -549,20 +527,13 @@ function HomePage() {
               srcSet="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D"
               media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
             />
-            <img src="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D" />
-          </picture>
-          <picture id="github-top-langs">
-            <source
-              srcSet="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=donut-vertical"
-              media="(prefers-color-scheme: dark)"
+            <img
+              id="github-streak-stats"
+              src="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D"
             />
-            <source
-              srcSet="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=donut-vertical"
-              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-            />
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=donut-vertical" />
           </picture>
-          <picture id="github-stats-card">
+
+          <picture className={styles.pictures}>
             <source
               srcSet="https://github-readme-stats.vercel.app/api?username=nishalbarman)"
               media="(prefers-color-scheme: dark)"
@@ -571,10 +542,26 @@ function HomePage() {
               srcSet="https://github-readme-stats.vercel.app/api?username=nishalbarman&show_icons=true"
               media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
             />
-            <img src="https://github-readme-stats.vercel.app/api?username=nishalbarman" />
+            <img
+              id="github-stats-card"
+              src="https://github-readme-stats.vercel.app/api?username=nishalbarman"
+            />
           </picture>
         </div>
-        {/* </div> */}
+        <picture className={styles.pictures}>
+          <source
+            srcSet="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=compact"
+            media="(prefers-color-scheme: dark)"
+          />
+          <source
+            srcSet="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=compact"
+            media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          />
+          <img
+            id="github-top-langs"
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=compact"
+          />
+        </picture>
       </div>
 
       <Box my={"45px"}></Box>
@@ -587,8 +574,8 @@ function HomePage() {
             </div>
             <div className="prompt">
               <span>
-                If you are here then definately you want to contact me, ok a
-                warm heart welcome to you and thank you for contacting me.
+                If you are here then definately you want to contact me, A
+                warm-hearted welcome to you and thank you for contacting me.
               </span>
             </div>
           </div>

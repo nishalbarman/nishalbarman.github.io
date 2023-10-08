@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 15%;
 }
 
 .details_wrapper > div {
@@ -28,47 +27,33 @@
 
 /* my name and small intro */
 
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: orange;
-  }
-}
-
 .very_first_info {
-  background-image: url(https://img.freepik.com/premium-vector/abstract-soft-smooth-blue-gradient-color-lighting-modern-graphic-design-studio-scene_120819-1243.jpg);
+  background-image: url(https://rare-gallery.com/uploads/posts/582433-night-sky-hd.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
   text-align: center;
-  height: 700px;
-  padding-bottom: 5rem;
+  height: 100vh;
   margin-bottom: -180px;
 }
 
-.very_first_info > .details_wrapper {
+.names_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(20px);
+  padding: 0px 15%;
+}
+
+.very_first_info .details_wrapper {
   gap: 2rem;
 }
 
-.very_first_info > .details_wrapper > p:nth-child(2) {
+.very_first_info .details_wrapper > p:nth-child(2) {
+  max-width: 100%;
   width: 70%;
-  color: rgb(164, 206, 227);
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgb(18, 53, 71);
 }
 
 .very_first_info p:nth-child(2) {
@@ -76,7 +61,7 @@
   font-weight: 400;
   line-height: 2rem;
   color: white;
-  stroke: 1px solid black;
+  text-shadow: 0px 0px 10px black;
 }
 
 .very_first_info button {
@@ -98,6 +83,11 @@
 }
 
 .section_wrapper.about_section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
   margin-top: 5rem;
   gap: 3rem;
   border-radius: 15px;
@@ -157,11 +147,14 @@
 /* skills section/cards  */
 
 .skill_grid {
+  display: flex;
+  flex-wrap: wrap;
   gap: 2.2rem;
   grid-template-columns: repeat(10, auto);
-  place-items: center;
-  justify-content: center;
-  place-content: center;
+  justify-content: space-around;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.1);
+  padding: 2rem 3rem;
+  border-radius: 15px;
 }
 
 .skills_card {
@@ -175,7 +168,7 @@
 }
 
 .skills_card > img {
-  height: 75px;
+  height: 70px;
   margin-bottom: 10px;
   mix-blend-mode: darken;
   transition: all 0.2s ease-in-out;
@@ -194,6 +187,16 @@
   display: none;
   font-size: 20px;
   margin-top: 10px;
+}
+
+.skils_inner {
+  display: grid;
+  justify-content: center;
+  place-items: center;
+  grid-template-columns: repeat(10, auto);
+  border-radius: 15px;
+  padding: 3rem 3rem;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.2);
 }
 
 /* projects section  */
@@ -278,11 +281,13 @@
 /* github stack  */
 
 .github_grid_section {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   gap: 25px;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .details_wrapper {
@@ -299,6 +304,18 @@
 
 .image_wrapper {
   width: 100%;
+}
+
+.pictures {
+  width: 100%;
+}
+
+.pictures > img {
+  width: 100%;
+}
+
+.pictures:nth-child(4) {
+  width: 500px;
 }
 
 .wave_wrapper {
@@ -353,6 +370,26 @@
   }
 }
 
+@media only screen and (max-width: 1670px) {
+  .skill_grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1295px) {
+  .skill_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .github_grid_section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .pictures:nth-child(4) {
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 1590px) {
   div.details_wrapper .first_sec_heading {
     font-size: 2.8rem;
@@ -361,6 +398,21 @@
 
   div.details_wrapper > p:nth-child(2) {
     font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 1450px) {
+  div.section_wrapper.about_section {
+    padding: 2rem;
+  }
+  div.section_wrapper.about_section > div.details_wrapper {
+    width: 100%;
+    padding: 10px;
+  }
+
+  div.section_wrapper.about_section > div.details_wrapper > p:first-child {
+    text-align: center;
+    width: 100%;
+    margin: -35px 0px 0px 0px !important;
   }
 }
 
@@ -428,6 +480,44 @@
 
   .section_wrapper .details_wrapper > p:nth-child(2) {
     font-size: 23px;
+  }
+}
+
+@media only screen and (max-width: 1295px) {
+  .skill_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .name_wrapper_inner {
+    display: flex;
+    flex-direction: column;
+    gap: -10px;
+    width: 100%;
+  }
+
+  .service_card:hover {
+    rotate: 0deg;
+    scale: 1.03;
+  }
+
+  .names_wrapper {
+    padding: 0px;
+  }
+
+  .name_wrapper_inner > div > div > span {
+    font-size: 2.5rem;
+    line-height: 10px;
+  }
+
+  .names_wrapper > .details_wrapper > div.name_wrapper_inner + p {
+    width: 100%;
+  }
+
+  .name_wrapper_inner p {
+    font-size: 20px;
+    width: 100%;
   }
 }
 

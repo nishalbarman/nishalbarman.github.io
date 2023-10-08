@@ -102,7 +102,7 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
                   boxShadow: "rgba(17, 17, 26, 0.1) 0px 1px 0px",
                   color: "black",
                 }
-              : {}
+              : { color: "white" }
           }>
           <div
             className={`${styles.navbar} max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4`}>
@@ -111,7 +111,15 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
               onClick={() => {
                 navigate("/");
               }}>
-              <span className="text-3xl font-semibold whitespace-nowrap">
+              <span
+                style={
+                  colorChange
+                    ? {
+                        color: "black",
+                      }
+                    : { color: "white" }
+                }
+                className="text-3xl font-semibold whitespace-nowrap">
                 Nishal
               </span>
             </div>
@@ -189,9 +197,7 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
               id="resume-button-1"
               className={`${styles.wave_wrapper} nav-link resume`}
               onClick={handleResumeClick}>
-              {/* <a href={resume_pdf} target="_blank" download> */}
               Resume
-              {/* </a> */}
             </div>
           </div>
         </div>
