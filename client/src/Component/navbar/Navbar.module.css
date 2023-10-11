@@ -26,7 +26,7 @@
   align-items: center;
   transition: all 0.3s ease-in-out !important;
   background-color: transparent;
-  /* background: linear-gradient(to right, rgb(178, 240, 255), rgb(225, 173, 255)); */
+  backdrop-filter: blur(10px);
 }
 
 .navbar_animate {

@@ -15,7 +15,9 @@ function App() {
         <Navbar isWhiteBackground={isWhite} isOfferVisible={!true} /> //isWhite
       )}
       <div className="App">
-        <AllRoutes />
+        <div className="App2">
+          <AllRoutes />
+        </div>
       </div>
       <Footer />
     </>

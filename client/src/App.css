@@ -1,5 +1,14 @@
 .App {
+  background: linear-gradient(45deg, rgb(0, 0, 0), rgb(26, 38, 47));
+}
+
+.App2 {
   backdrop-filter: blur(20px);
+}
+
+#github-stats > .react-activity-calendar {
+  filter: invert(1);
+  color: black;
 }
 
 .footer i {

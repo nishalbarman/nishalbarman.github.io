@@ -365,7 +365,7 @@ function HomePage() {
         </div>
       </div>
 
-      <Box my={"100px"}></Box>
+      <Box my={"80px"}></Box>
 
       {/* projects card  */}
       <div id="projects" ref={projectRef} className={styles.services_wrapper}>
@@ -510,7 +510,38 @@ function HomePage() {
 
       <div id="github-stats" className={styles.services_wrapper}>
         <p className={styles.service_heading}>Github Stats</p>
-        {/* <div className="" style={{ width: "100%" }}> */}
+
+        <div className={`${styles.github_grid_section}`}>
+          <picture className={styles.pictures}>
+            <source
+              srcSet="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D&theme=dark"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcSet="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D&theme=dark"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img
+              id="github-streak-stats"
+              src="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D&theme=dark"
+            />
+          </picture>
+
+          <picture className={styles.pictures}>
+            <source
+              srcSet="https://github-readme-stats.vercel.app/api?username=nishalbarman&theme=dark)"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcSet="https://github-readme-stats.vercel.app/api?username=nishalbarman&show_icons=true&theme=dark"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img
+              id="github-stats-card"
+              src="https://github-readme-stats.vercel.app/api?username=nishalbarman&theme=dark"
+            />
+          </picture>
+        </div>
 
         <GitHubCalendar
           username="nishalbarman"
@@ -518,49 +549,19 @@ function HomePage() {
             totalCount: "{{count}} contributions in the last half year",
           }}
         />
-        <div className={`${styles.github_grid_section}`}>
-          <picture className={styles.pictures}>
-            <source
-              srcSet="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D"
-              media="(prefers-color-scheme: dark)"
-            />
-            <source
-              srcSet="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D"
-              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-            />
-            <img
-              id="github-streak-stats"
-              src="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D"
-            />
-          </picture>
 
-          <picture className={styles.pictures}>
-            <source
-              srcSet="https://github-readme-stats.vercel.app/api?username=nishalbarman)"
-              media="(prefers-color-scheme: dark)"
-            />
-            <source
-              srcSet="https://github-readme-stats.vercel.app/api?username=nishalbarman&show_icons=true"
-              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-            />
-            <img
-              id="github-stats-card"
-              src="https://github-readme-stats.vercel.app/api?username=nishalbarman"
-            />
-          </picture>
-        </div>
         <picture className={styles.pictures}>
           <source
-            srcSet="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=compact"
+            srcSet="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=compact&theme=dark"
             media="(prefers-color-scheme: dark)"
           />
           <source
-            srcSet="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=compact"
+            srcSet="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=compact&theme=dark"
             media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
           />
           <img
             id="github-top-langs"
-            src="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=compact"
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=compact&theme=dark"
           />
         </picture>
       </div>

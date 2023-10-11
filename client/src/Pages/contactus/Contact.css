@@ -10,6 +10,7 @@
   flex-direction: column;
   align-items: center;
   font-family: "Mukta";
+  color: white;
 }
 
 .head {
@@ -89,17 +90,19 @@
   margin: 1rem 0.5rem;
   border: none;
   border-bottom: 1px solid var(--inp_border_primary);
-  transition: 0.3s all ease-in;
   height: 45px;
+  background-color: transparent;
+  transition: 0.3s all ease-in;
 }
 
 .inputDiv .inputBox:focus {
   outline: none;
-  border-bottom: 1px solid var(--inp_border_onFocus);
+  border-bottom: 1px solid white;
 }
 
 .inputDiv .inputBox:focus::placeholder {
-  color: var(--inp_text_onFocus);
+  color: white;
+  transition: all 0.2s ease;
 }
 
 .inputDiv textarea {

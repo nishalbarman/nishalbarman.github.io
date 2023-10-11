@@ -97,10 +97,10 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
           style={
             colorChange
               ? {
-                  backgroundColor: "white",
+                  backgroundColor: "rgb(0,0,0,0.3)",
                   top: "0",
                   boxShadow: "rgba(17, 17, 26, 0.1) 0px 1px 0px",
-                  color: "black",
+                  color: "white",
                 }
               : { color: "white" }
           }>
@@ -115,7 +115,7 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
                 style={
                   colorChange
                     ? {
-                        color: "black",
+                        color: "white",
                       }
                     : { color: "white" }
                 }
