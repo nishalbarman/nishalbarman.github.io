@@ -509,6 +509,10 @@
     width: 100%;
   }
 
+  .names_wrapper > div {
+    padding: 0px 11px;
+  }
+
   .service_card:hover {
     rotate: 0deg;
     scale: 1.03;
