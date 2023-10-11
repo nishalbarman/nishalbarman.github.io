@@ -17,12 +17,12 @@ const app = express();
 app.use(cors());
 
 // log every api call and write it on access.log
-const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, "access.log"),
-  { flags: "a" }
-);
+// const accessLogStream = fs.createWriteStream(
+//   path.join(__dirname, "access.log"),
+//   { flags: "a" }
+// );
 
-app.use(morgan("combined", { stream: accessLogStream })); // log every api call and write it on access.log
+// app.use(morgan("combined", { stream: accessLogStream })); // log every api call and write it on access.log
 app.use(express.json()); // this middleware is used to parse the incoming json data
 
 app.use("/users", usersRoute);
