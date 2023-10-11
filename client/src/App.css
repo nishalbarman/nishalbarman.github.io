@@ -16,9 +16,21 @@
 }
 
 @media only screen and (max-width: 850px) {
-  .App > div:not(#home) {
+  .App2 > div:not(#home) {
     padding-left: 5% !important;
     padding-right: 5% !important;
+  }
+
+  .App > .App2 .container > .form {
+    width: 100%;
+  }
+
+  .App > .App2 #about {
+    width: 90%;
+  }
+
+  .App > .App2 #about > div>p:nth-child(2) {
+    font-size: 21px;
   }
 
   .fourth_footer {
