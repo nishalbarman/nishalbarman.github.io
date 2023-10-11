@@ -81,14 +81,17 @@ function HomePage() {
 
     try {
       setSending(true);
-      const res = await axios.post(`https://portfollio-server.onrender.com/messages/create`, formData);
+      const res = await axios.post(
+        `https://portfollio-server.onrender.com/messages/create`,
+        formData
+      );
       console.log(res);
       if (res.status === 200) {
         setFormData(initialFormData);
         toast({
           title: "Message submitted!",
           description:
-            "Your message has been sent, we will get back to you before 48 hours. Thank You!",
+            "Your message has been sent, I will get back to you soon. Thank You!",
           status: "success",
           duration: 9000,
           isClosable: true,
