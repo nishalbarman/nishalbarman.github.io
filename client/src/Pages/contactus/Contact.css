@@ -91,7 +91,6 @@
   border-bottom: 1px solid var(--inp_border_primary);
   transition: 0.3s all ease-in;
   height: 45px;
-  background-color: transparent;
 }
 
 .inputDiv .inputBox:focus {

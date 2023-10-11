@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import { ImSpinner10 } from "react-icons/im";
 
@@ -10,7 +11,10 @@ function Contact() {
   var emailTester =
     /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
-  const server_api = process.env.REACT_APP_SERVER_API || "";
+  const server_api =
+    process.env.NODE_ENV === "development"
+      ? process.env.REACT_APP_SERVER_API_DEV
+      : process.env.REACT_APP_SERVER_API_PROD;
 
   const [sending, setSending] = useState(false);
 
@@ -57,10 +61,7 @@ function Contact() {
 
     try {
       setSending(true);
-      const res = await axios.post(
-        `https://portfollio-server.onrender.com/messages/create`,
-        formData
-      );
+      const res = await axios.post(`${server_api}/messages/create`, formData);
       console.log(res);
       if (res.status === 200) {
         setFormData(initialFormData);
@@ -106,18 +107,37 @@ function Contact() {
   return (
     <>
       <Box my={"5.1rem"}></Box>
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        width="100%"
+        py={130}
+        bgImage="url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"
+        bgPosition="center"
+        bgRepeat="no-repeat"
+        bgSize={"cover"}
+        mb={2}>
+        <h1 className="head">Contact Us</h1>
+      </Box>
+      {/* <div className="headCont">
+        <h1 className="head">Contact Us</h1>
+        
+      </div> */}
 
       <div className="container">
         <div className="form">
           <div className="formHeader">
             {/* title anf ptompt here */}
             <div className="title">
-              <h4>Contact Me</h4>
+              <h4>Let's Code Your Vision!</h4>
             </div>
             <div className="prompt">
               <span>
-                If you are here then definately you want to contact me, ok a
-                warm heart welcome to you and thank you for contacting me.
+                Whether you've got an idea, a few technical hitches, or just
+                want to discuss tech and the future of digital, we're here. Drop
+                your messages in the box below and let's bring your visions to
+                life!
               </span>
             </div>
           </div>

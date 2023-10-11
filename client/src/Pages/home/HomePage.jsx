@@ -23,6 +23,7 @@ import { setRefer } from "../../Redux/smoothscroll/action-creators";
 import { useSelector } from "react-redux";
 import GitHubCalendar from "react-github-calendar";
 import Typewriter from "typewriter-effect";
+import "../contactus/Contact.css";
 import resume_pdf from "../../Resume/Nishal_Resume.pdf";
 
 function HomePage() {
@@ -80,7 +81,7 @@ function HomePage() {
 
     try {
       setSending(true);
-      const res = await axios.post(`${server_api}/messages/create`, formData);
+      const res = await axios.post(`https://portfollio-server.onrender.com/messages/create`, formData);
       console.log(res);
       if (res.status === 200) {
         setFormData(initialFormData);
