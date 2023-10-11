@@ -29,11 +29,7 @@
     width: 90%;
   }
 
-  .App > .App2 #about > div>p:nth-child(2) {
+  .App > .App2 #about > div > p:nth-child(2) {
     font-size: 21px;
-  }
-
-  .fourth_footer {
-    margin: auto;
   }
 }
