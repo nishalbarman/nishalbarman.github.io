@@ -33,10 +33,7 @@ function HomePage() {
   var emailTester =
     /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
-  const server_api =
-    process.env.NODE_ENV === "development"
-      ? process.env.REACT_APP_SERVER_API_DEV
-      : process.env.REACT_APP_SERVER_API_PROD;
+  const server_api = process.env.REACT_APP_SERVER_API;
 
   const [sending, setSending] = useState(false);
 
