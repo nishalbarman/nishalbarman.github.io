@@ -64,7 +64,7 @@
   text-shadow: 0px 0px 10px black;
 }
 
-.very_first_info button {
+.very_first_info button, .send_button button  {
   font-size: 16px;
   text-transform: uppercase;
   align-items: center;

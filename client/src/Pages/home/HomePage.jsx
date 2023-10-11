@@ -627,15 +627,18 @@ function HomePage() {
               />
             </div>
 
-            <div className="" id="">
-              <button onClick={sendMessage} className="btn" disabled={sending}>
-                Send A Message
-                {sending ? (
-                  <ImSpinner10 />
-                ) : (
-                  <i className="bi bi-arrow-right" />
-                )}
-              </button>
+            <div className={styles.send_button} id="">
+              <Button
+                onClick={sendMessage}
+                loadingPosition="end"
+                isLoading={sending}
+                loadingText="Sending"
+                colorScheme="twitter"
+                py={"1.7rem"}
+                w={"170px"}
+                my={"1rem"}>
+                Send Message
+              </Button>
             </div>
           </div>
         </div>
