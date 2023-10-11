@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import axios from "axios";
 import { ImSpinner10 } from "react-icons/im";
 
@@ -11,10 +10,7 @@ function Contact() {
   var emailTester =
     /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
-  const server_api =
-    process.env.NODE_ENV === "development"
-      ? process.env.REACT_APP_SERVER_API_DEV
-      : process.env.REACT_APP_SERVER_API_PROD;
+  const server_api = process.env.REACT_APP_SERVER_API || "https://portfollio-server.onrender.com";
 
   const [sending, setSending] = useState(false);
 
