@@ -10,7 +10,7 @@ function Contact() {
   var emailTester =
     /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
-  const server_api = process.env.REACT_APP_SERVER_API || "https://portfollio-server.onrender.com";
+  const server_api = process.env.REACT_APP_SERVER_API || "";
 
   const [sending, setSending] = useState(false);
 
@@ -57,7 +57,10 @@ function Contact() {
 
     try {
       setSending(true);
-      const res = await axios.post(`${server_api}/messages/create`, formData);
+      const res = await axios.post(
+        `https://portfollio-server.onrender.com/messages/create`,
+        formData
+      );
       console.log(res);
       if (res.status === 200) {
         setFormData(initialFormData);
