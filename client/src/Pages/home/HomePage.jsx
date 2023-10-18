@@ -24,7 +24,7 @@ import { useSelector } from "react-redux";
 import GitHubCalendar from "react-github-calendar";
 import Typewriter from "typewriter-effect";
 import "../contactus/Contact.css";
-import resume_pdf from "../../Resume/Nishal_Resume.pdf";
+import resume_pdf from "../../Resume/Nishal_Barman_Resume.pdf";
 
 function HomePage() {
   const setRef = useSelector((state) => state.refer_reducer);
@@ -187,7 +187,7 @@ function HomePage() {
               id="resume-button-2"
               onClick={() => {
                 const link = document.createElement("a");
-                link.download = "Nishal_Resume.pdf";
+                link.download = "Nishal_Barman_Resume.pdf";
                 link.href = resume_pdf;
                 link.click();
               }}

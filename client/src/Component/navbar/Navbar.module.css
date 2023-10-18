@@ -227,7 +227,7 @@
   cursor: pointer;
 }
 
-/* @media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 760px) {
   .desk_links {
     display: none;
   }
@@ -235,11 +235,18 @@
   .sidebar_icon {
     display: block;
   }
-}
 
-@media only screen and (max-width: 990px) {
   .wave_wrapper {
     display: none;
+  }
+
+  .wave_wrapper2 {
+    display: flex;
+    width: 90%;
+    align-self: center;
+    justify-self: center;
+    height: 50px;
+    margin-top: 15px;
   }
 }
 
@@ -253,4 +260,4 @@
     justify-content: space-between;
     padding: 6%;
   }
-} */
+}

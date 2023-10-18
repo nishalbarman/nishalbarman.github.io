@@ -39,7 +39,7 @@ function Footer() {
               <i
                 onClick={() => {
                   window.open(
-                    "https://www.linkedin.com/in/nishal-barman-76a13b295/",
+                    "https://www.linkedin.com/in/nishal-barman-3545111b5/",
                     "_blank"
                   );
                 }}

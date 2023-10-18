@@ -3,7 +3,7 @@ import styles from "./Navbar.module.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, useStepContext } from "@chakra-ui/react";
-import resume_pdf from "../../Resume/Nishal_Resume.pdf";
+import resume_pdf from "../../Resume/Nishal_Barman_Resume.pdf";
 import { setUseRefs } from "../../Redux/smoothscroll/action-creators";
 
 function Navbar({ isWhiteBackground, isOfferVisible }) {
@@ -39,15 +39,15 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
       setColorchange(true);
     }
 
-    let st = window.scrollY || document.documentElement.scrollTop;
-    if (st > lastScrollTop) {
-      // downscroll code
-      if (!navbarHide) setNavbarHidden(true);
-    } else if (st < lastScrollTop) {
-      // upscroll code
-      setNavbarHidden(false);
-    } // else was horizontal scroll
-    setLastScrollTop(st <= 0 ? 0 : st); // For Mobile or negative scrolling
+    // let st = window.scrollY || document.documentElement.scrollTop;
+    // if (st > lastScrollTop) {
+    //   // downscroll code
+    //   if (!navbarHide) setNavbarHidden(true);
+    // } else if (st < lastScrollTop) {
+    //   // upscroll code
+    //   setNavbarHidden(false);
+    // } // else was horizontal scroll
+    // setLastScrollTop(st <= 0 ? 0 : st); // For Mobile or negative scrolling
   });
 
   const handleShowSideMenu = () => {
@@ -70,7 +70,10 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
     link.download = "Nishal_Resume.pdf";
     link.href = resume_pdf;
     link.click();
-    window.open(resume_pdf, "_blank");
+    window.open(
+      "https://drive.google.com/file/d/1-KMU_12MvQxKNcpJDLcbkToBNgBxe5GY/view?usp=sharing",
+      "_blank"
+    );
   };
 
   useEffect(() => {
@@ -127,7 +130,7 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
             <div className={styles.sidebar_icon} onClick={handleShowSideMenu}>
               <i
                 className="fa-solid fa-bars fa-xl"
-                style={{ color: "#000000" }}
+                style={{ color: "white" }}
               />
             </div>
             <div className={`${styles.desk_links}`}>
@@ -136,9 +139,10 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
                   e.preventDefault();
                   homeRef?.current?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className={`${
-                  location.pathname === "/" ? styles.link_active_desk : ""
-                } nav-link home`}>
+                // className={`${
+                //   location.pathname === "/" ? styles.link_active_desk : ""
+                // } nav-link home`}
+                >
                 Home
               </Link>
               <Link
@@ -215,41 +219,55 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
         } z-50`}>
         <div className={styles.logoouter}>
           {/* <img src={logo} /> */}
-          <h1 className={`${styles.logo}`}>AntarAtma</h1>
+          <h1 className={`${styles.logo}`}>Nishal</h1>
         </div>
         <div className={styles.hor_line}></div>
         <Link
-          onClick={handleLinkClick}
-          to={"/"}
-          className={`${
-            location.pathname === "/" ? styles.mobile_active_link : ""
-          } font-semibold`}>
+          onClick={(e) => {
+            e.preventDefault();
+            homeRef?.current?.scrollIntoView({ behavior: "smooth" });
+            handleLinkClick();
+          }}
+          // className={`${
+          //   location.pathname === "/" ? styles.mobile_active_link : ""
+          // } font-semibold`}
+          >
           Home
         </Link>
         <div className={styles.hor_line}></div>
         <Link
-          onClick={handleLinkClick}
-          to={"/aboutus"}
+          onClick={(e) => {
+            e.preventDefault();
+            aboutRef?.current?.scrollIntoView({ behavior: "smooth" });
+            console.log("Kon hai ye =>", aboutRef);
+            handleLinkClick();
+          }}
           className={`${
             location.pathname === "/aboutus" ? styles.mobile_active_link : ""
           } font-semibold`}>
-          About Us
+          About
         </Link>
         <div className={styles.hor_line}></div>
         <Link
-          onClick={handleLinkClick}
-          to={"/services"}
+          onClick={(e) => {
+            e.preventDefault();
+            skillsRef?.current?.scrollIntoView({ behavior: "smooth" });
+            handleLinkClick();
+          }}
           className={`${
             location.pathname.includes("/services")
               ? styles.mobile_active_link
               : ""
           } font-semibold`}>
-          Services
+          Skills
         </Link>
         <div className={styles.hor_line}></div>
         <Link
-          onClick={handleLinkClick}
-          to={"/projects"}
+          onClick={(e) => {
+            e.preventDefault();
+            projectRef?.current?.scrollIntoView({ behavior: "smooth" });
+            handleLinkClick();
+          }}
           className={`${
             location.pathname.includes("/projects")
               ? styles.mobile_active_link
@@ -259,32 +277,23 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
         </Link>
         <div className={styles.hor_line}></div>
         <Link
-          onClick={handleLinkClick}
-          to={"/contact"}
+          onClick={(e) => {
+            e.preventDefault();
+            contactRef?.current?.scrollIntoView({ behavior: "smooth" });
+            handleLinkClick();
+          }}
           className={`${
             location.pathname === "/contact" ? styles.mobile_active_link : ""
           } font-semibold`}>
           Contact Us
         </Link>
         <div className={styles.hor_line}></div>
-        <Button
-          display={{ base: "inline-flex", sm: "inline-flex", lg: "none" }}
-          onClick={() => {
-            navigate("/contact");
-            handleLinkClick();
-          }}
-          colorScheme="twitter"
-          py={"1.5rem"}
-          w={"140px"}
-          my={"1rem"}
-          boxShadow={"0px 0px 10px white"}
-          style={{
-            fontSize: "13px",
-            textTransform: "uppercase",
-            alignItems: "center",
-          }}>
-          Book A Call
-        </Button>
+
+        <div
+          className={`${styles.wave_wrapper} ${styles.wave_wrapper2}`}
+          onClick={handleResumeClick}>
+          Resume
+        </div>
       </div>
     </>
   );
