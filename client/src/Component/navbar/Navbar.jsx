@@ -142,7 +142,7 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
                 // className={`${
                 //   location.pathname === "/" ? styles.link_active_desk : ""
                 // } nav-link home`}
-                >
+                className={`nav-link home`}>
                 Home
               </Link>
               <Link
