@@ -67,7 +67,7 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
 
   const handleResumeClick = () => {
     const link = document.createElement("a");
-    link.download = "Nishal_Resume.pdf";
+    link.download = "Nishal-Barman-Resume.pdf";
     link.href = resume_pdf;
     link.click();
     window.open(
@@ -231,7 +231,7 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
           // className={`${
           //   location.pathname === "/" ? styles.mobile_active_link : ""
           // } font-semibold`}
-          >
+        >
           Home
         </Link>
         <div className={styles.hor_line}></div>

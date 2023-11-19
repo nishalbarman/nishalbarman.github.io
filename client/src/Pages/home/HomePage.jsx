@@ -187,7 +187,7 @@ function HomePage() {
               id="resume-button-2"
               onClick={() => {
                 const link = document.createElement("a");
-                link.download = "Nishal_Barman_Resume.pdf";
+                link.download = "Nishal-Barman-Resume.pdf";
                 link.href = resume_pdf;
                 link.click();
               }}
