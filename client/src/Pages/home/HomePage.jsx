@@ -14,7 +14,7 @@ import styles from "./HomePage.module.css";
 import axios from "axios";
 import { ImSortAlphaAsc, ImSpinner10 } from "react-icons/im";
 import { useToast } from "@chakra-ui/react";
-import my_image from "../../Images/myimage.jpg";
+import my_image from "../../Images/myimage.png";
 import secret_message from "../../Images/projects/secret_message.png";
 import react_news_app from "../../Images/projects/news.png";
 import auto_part from "../../Images/projects/auto_part.png";
@@ -25,6 +25,7 @@ import GitHubCalendar from "react-github-calendar";
 import Typewriter from "typewriter-effect";
 import "../contactus/Contact.css";
 import resume_pdf from "../../Resume/Nishal_Barman_Resume.pdf";
+import Tilt from "react-parallax-tilt";
 
 function HomePage() {
   const setRef = useSelector((state) => state.refer_reducer);
@@ -245,6 +246,7 @@ function HomePage() {
               format.
             </p>
           </div>
+
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
@@ -258,6 +260,7 @@ function HomePage() {
               language such as HTML or XML.
             </p>
           </div>
+
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
@@ -271,6 +274,7 @@ function HomePage() {
               and pretty much everything else.
             </p>
           </div>
+
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
@@ -284,6 +288,7 @@ function HomePage() {
               and pretty much everything else.
             </p>
           </div>
+
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
@@ -297,6 +302,7 @@ function HomePage() {
               and pretty much everything else.
             </p>
           </div>
+
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
@@ -310,6 +316,7 @@ function HomePage() {
               and pretty much everything else.
             </p>
           </div>
+
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
@@ -323,6 +330,7 @@ function HomePage() {
               and pretty much everything else.
             </p>
           </div>
+
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
@@ -336,6 +344,7 @@ function HomePage() {
               and pretty much everything else.
             </p>
           </div>
+
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
@@ -349,6 +358,7 @@ function HomePage() {
               and pretty much everything else.
             </p>
           </div>
+
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
@@ -371,136 +381,156 @@ function HomePage() {
       <div id="projects" ref={projectRef} className={styles.services_wrapper}>
         <p className={styles.service_heading}>Projects</p>
         <div className={styles.grid_section}>
-          <div className={`${styles.service_card} project-card`}>
-            <img src={secret_message} alt="" style={{ marginBottom: "30px" }} />
-            <div className={styles.service_body}>
-              <p className="project-title">
+          <Tilt>
+            <div className={`${styles.service_card} project-card`}>
+              <img
+                src={secret_message}
+                alt=""
+                style={{ marginBottom: "30px" }}
+              />
+              <div className={styles.service_body}>
+                <p className="project-title">
+                  <a
+                    className="project-deployed-link"
+                    href="https://secret-msg-test.netlify.app/"
+                    target="_blank">
+                    Secret Messaging
+                  </a>
+                </p>
                 <a
-                  className="project-deployed-link"
-                  href="https://secret-msg-test.netlify.app/"
+                  className="project-github-link"
+                  href="https://github.com/nishalbarman/secret-message-react"
                   target="_blank">
-                  Secret Messaging
+                  Gitub Link
                 </a>
-              </p>
-              <a
-                className="project-github-link"
-                href="https://github.com/nishalbarman/secret-message-react"
-                target="_blank">
-                Gitub Link
-              </a>
-              <p className="project-description">
-                A comprehensive full-stack project that enables users to
-                register and share their unique links to receive anonymous
-                messages.
-              </p>
+                <p className="project-description">
+                  A comprehensive full-stack project that enables users to
+                  register and share their unique links to receive anonymous
+                  messages.
+                </p>
 
-              <div className={`${styles.tech_stack_outer} project-tech-stack`}>
-                <p>Tech Stack</p>
-                <ul className="">
-                  <li>ReactJS</li>
-                  <li>ExpressJS</li>
-                  <li>MongoDB</li>
-                  <li>socket.io</li>
-                </ul>
+                <div
+                  className={`${styles.tech_stack_outer} project-tech-stack`}>
+                  <p>Tech Stack</p>
+                  <ul className="">
+                    <li>ReactJS</li>
+                    <li>ExpressJS</li>
+                    <li>MongoDB</li>
+                    <li>socket.io</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div className={`${styles.service_card} project-card`}>
-            <img src={react_news_app} alt="" style={{ marginBottom: "30px" }} />
-            <div className={styles.service_body}>
-              <p className="project-title">
+          </Tilt>
+          <Tilt>
+            <div className={`${styles.service_card} project-card`}>
+              <img
+                src={react_news_app}
+                alt=""
+                style={{ marginBottom: "30px" }}
+              />
+              <div className={styles.service_body}>
+                <p className="project-title">
+                  <a
+                    className="project-deployed-link"
+                    href="https://nishalbarman.github.io/react-newss-app/"
+                    target="_blank">
+                    Axom News
+                  </a>
+                </p>
                 <a
-                  className="project-deployed-link"
-                  href="https://nishalbarman.github.io/react-newss-app/"
+                  className="project-github-link"
+                  href="https://github.com/nishalbarman/react-newss-app"
                   target="_blank">
-                  Axom News
+                  Gitub Link
                 </a>
-              </p>
-              <a
-                className="project-github-link"
-                href="https://github.com/nishalbarman/react-newss-app"
-                target="_blank">
-                Gitub Link
-              </a>
-              <p className="project-description">
-                Crafted a single-page fronend project using ReactJS. Leveraged
-                the Context API for state management, ensuring seamless data
-                handling.
-              </p>
-              <div className={`${styles.tech_stack_outer} project-tech-stack`}>
-                <p>Tech Stack</p>
-                <ul className="">
-                  <li>ReactJS</li>
-                  <li>Json Mock Server</li>
-                  <li>HTML, CSS</li>
-                  <li>Swiper JS</li>
-                </ul>
+                <p className="project-description">
+                  Crafted a single-page fronend project using ReactJS. Leveraged
+                  the Context API for state management, ensuring seamless data
+                  handling.
+                </p>
+                <div
+                  className={`${styles.tech_stack_outer} project-tech-stack`}>
+                  <p>Tech Stack</p>
+                  <ul className="">
+                    <li>ReactJS</li>
+                    <li>Json Mock Server</li>
+                    <li>HTML, CSS</li>
+                    <li>Swiper JS</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div className={`${styles.service_card} project-card`}>
-            <img src={auto_part} alt="" style={{ marginBottom: "30px" }} />
-            <div className={styles.service_body}>
-              <p className="project-title">
+          </Tilt>
+          <Tilt>
+            <div className={`${styles.service_card} project-card`}>
+              <img src={auto_part} alt="" style={{ marginBottom: "30px" }} />
+              <div className={styles.service_body}>
+                <p className="project-title">
+                  <a
+                    className="project-deployed-link"
+                    href="https://auto-part.netlify.app/"
+                    target="_blank">
+                    Online Auto Part Shop
+                  </a>
+                </p>
                 <a
-                  className="project-deployed-link"
-                  href="https://auto-part.netlify.app/"
+                  className="project-github-link"
+                  href="https://github.com/nishalbarman/online-auto-part-shop"
                   target="_blank">
-                  Online Auto Part Shop
+                  Gitub Link
                 </a>
-              </p>
-              <a
-                className="project-github-link"
-                href="https://github.com/nishalbarman/online-auto-part-shop"
-                target="_blank">
-                Gitub Link
-              </a>
-              <p className="project-description">
-                Collaboratively led a team of four members in the end-to-end
-                creation of a website dedicated to online auto part sales.
-              </p>
-              <div className={`${styles.tech_stack_outer} project-tech-stack`}>
-                <p>Tech Stack</p>
-                <ul className="">
-                  <li>Vannila JavaScript</li>
-                  <li>Json Mock Server</li>
-                  <li>HTML, CSS</li>
-                  <li>Splide</li>
-                </ul>
+                <p className="project-description">
+                  Collaboratively led a team of four members in the end-to-end
+                  creation of a website dedicated to online auto part sales.
+                </p>
+                <div
+                  className={`${styles.tech_stack_outer} project-tech-stack`}>
+                  <p>Tech Stack</p>
+                  <ul className="">
+                    <li>Vannila JavaScript</li>
+                    <li>Json Mock Server</li>
+                    <li>HTML, CSS</li>
+                    <li>Splide</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div className={`${styles.service_card} project-card`}>
-            <img src={consultant} alt="" style={{ marginBottom: "30px" }} />
-            <div className={styles.service_body}>
-              <p className="project-title">
+          </Tilt>
+          <Tilt>
+            <div className={`${styles.service_card} project-card`}>
+              <img src={consultant} alt="" style={{ marginBottom: "30px" }} />
+              <div className={styles.service_body}>
+                <p className="project-title">
+                  <a
+                    className="project-deployed-link"
+                    href="https://webconsultant-s.netlify.app/"
+                    target="_blank">
+                    WebService Consultant
+                  </a>
+                </p>
                 <a
-                  className="project-deployed-link"
-                  href="https://webconsultant-s.netlify.app/"
+                  className="project-github-link"
+                  href="https://github.com/nishalbarman/webservice-consultant"
                   target="_blank">
-                  WebService Consultant
+                  Gitub Link
                 </a>
-              </p>
-              <a
-                className="project-github-link"
-                href="https://github.com/nishalbarman/webservice-consultant"
-                target="_blank">
-                Gitub Link
-              </a>
-              <p className="project-description">
-                Single-page fully responsive fronend project using ReactJS with
-                a simple backend to recieve the messages.
-              </p>
-              <div className={`${styles.tech_stack_outer} project-tech-stack`}>
-                <p>Tech Stack</p>
-                <ul className="">
-                  <li>ReactJS</li>
-                  <li>ExpressJS</li>
-                  <li>ChakraUI</li>
-                </ul>
+                <p className="project-description">
+                  Single-page fully responsive fronend project using ReactJS
+                  with a simple backend to recieve the messages.
+                </p>
+                <div
+                  className={`${styles.tech_stack_outer} project-tech-stack`}>
+                  <p>Tech Stack</p>
+                  <ul className="">
+                    <li>ReactJS</li>
+                    <li>ExpressJS</li>
+                    <li>ChakraUI</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
+          </Tilt>
         </div>
       </div>
 

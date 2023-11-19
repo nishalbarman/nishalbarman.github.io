@@ -64,7 +64,8 @@
   text-shadow: 0px 0px 10px black;
 }
 
-.very_first_info button, .send_button button  {
+.very_first_info button,
+.send_button button {
   font-size: 16px;
   text-transform: uppercase;
   align-items: center;
@@ -72,7 +73,6 @@
   /* box-shadow: 0px 0px 10px rgb(255, 255, 255); */
   box-shadow: 0px 0px 8px rgba(61, 181, 225, 0.5);
   background-color: transparent;
-
 }
 
 /* about me section*/
@@ -226,11 +226,11 @@
 }
 
 .service_card:hover {
-  /* box-shadow: 0px 1px 40px rgb(0, 0, 0, 0.3); */
   box-shadow: 0px 1px 40px rgba(61, 181, 225, 0.5);
   z-index: 10;
-  scale: 1.1;
-  rotate: 2deg;
+  /* scale: 1.1; */
+  scale: 0.98;
+  /* rotate: 2deg; */
 }
 
 .service_card > img {
@@ -239,7 +239,8 @@
 }
 
 .service_card > .service_body {
-  padding: 20px 1rem;
+  /* padding: 20px 1rem; */
+  padding: 0px 1rem;
   font-size: 18px;
 }
 
@@ -260,7 +261,6 @@
 
 .service_card > .service_body > a:nth-child(2) {
   font-size: 18px;
-  /* color: rgb(16, 36, 211); */
   color: rgb(206, 206, 206);
   text-decoration: 1px solid underline;
   font-weight: 500;
