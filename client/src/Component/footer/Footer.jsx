@@ -20,7 +20,7 @@ function Footer() {
               </a>
             </p>
             {/* <p id="contact-phone">
-              <a href="tel:+916001845099">+916001845099</a>
+              <a href="tel:+911234567890">+911234567890</a>
             </p> */}
           </div>
 
