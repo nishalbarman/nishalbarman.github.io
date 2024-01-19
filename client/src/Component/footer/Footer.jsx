@@ -19,9 +19,9 @@ function Footer() {
                 nishalbarman11@gmail.com
               </a>
             </p>
-            <p id="contact-phone">
+            {/* <p id="contact-phone">
               <a href="tel:+916001845099">+916001845099</a>
-            </p>
+            </p> */}
           </div>
 
           <div className="fourth_footer">
