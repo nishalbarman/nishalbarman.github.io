@@ -135,10 +135,6 @@ function HomePage() {
   const projectRef = useRef();
   const contactRef = useRef();
 
-  // word animation starts here
-
-  // word animation ends
-
   useEffect(() => {
     if (typeof setRef === "function")
       setRef(homeRef, aboutRef, skillsRef, projectRef, contactRef);
