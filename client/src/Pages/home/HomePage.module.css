@@ -221,7 +221,7 @@
   border-radius: 18px;
   padding: 10px;
   font-weight: 400;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: all 0.3s ease;
 }
 
@@ -251,8 +251,24 @@
   text-decoration: 1px solid underline;
 }
 
-.service_card > .service_body > p:nth-child(1)::after {
+.service_card > .service_body > p:nth-child(1)::before {
+  content: "🔗 ";
+  text-decoration: none;
+  color: red;
+  text-decoration: 1px solid red;
+  cursor: pointer;
+}
+
+/* .service_card > .service_body > p:nth-child(1)::after {
   content: " 👈";
+  text-decoration: none;
+  color: red;
+  text-decoration: 1px solid red;
+  cursor: pointer;
+} */
+
+.service_card > .service_body > p:nth-child(1)::after {
+  content: " 👀";
   text-decoration: none;
   color: red;
   text-decoration: 1px solid red;
@@ -379,6 +395,28 @@
   100% {
     transform: translate(-50%) rotate(360deg);
   }
+}
+
+.project_card_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 10px 0;
+  padding: 15px 20px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(61, 181, 225, 0.5);
+  background-color: rgb(12, 18, 22);
+  cursor: pointer;
+  gap: 10px;
+}
+
+.project_card_button > img {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-2px);
 }
 
 @media only screen and (max-width: 1670px) {

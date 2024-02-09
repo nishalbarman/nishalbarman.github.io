@@ -26,6 +26,7 @@ import Typewriter from "typewriter-effect";
 import "../contactus/Contact.css";
 import resume_pdf from "../../Resume/Nishal_Barman_Resume.pdf";
 import Tilt from "react-parallax-tilt";
+import ServiceCard from "../../Component/ServiceCards/ServiceCard";
 
 function HomePage() {
   const setRef = useSelector((state) => state.refer_reducer);
@@ -142,6 +143,52 @@ function HomePage() {
     if (typeof setRef === "function")
       setRef(homeRef, aboutRef, skillsRef, projectRef, contactRef);
   }, [setRef]);
+
+  const projects = [
+    {
+      imageUrl: `${secret_message}`,
+      title: "Secret Messaging",
+      visitLink: "https://secret-msg-test.netlify.app/",
+      githubLink: "https://github.com/nishalbarman/secret-message-react",
+      description:
+        "A comprehensive full-stack project that enables users to register and share their unique links to receive anonymous messages.",
+      techstack: ["ReactJS", "ExpressJS", "MongoDB", "socket.io"],
+    },
+
+    {
+      imageUrl: react_news_app,
+      visitLink: "https://nishalbarman.github.io/react-newss-app/",
+      title: "Axom News",
+      githubLink: "https://github.com/nishalbarman/react-newss-app",
+      description:
+        "Crafted a single-page fronend project using ReactJS. Leveraged the Context API for state management, ensuring seamless data handling.",
+      techstack: ["ReactJS", "Json Mock Server", "HTML, CSS", "Swiper JS"],
+    },
+
+    {
+      imageUrl: auto_part,
+      title: "Online Auto Part Shop",
+      visitLink: "https://auto-part.netlify.app/",
+      githubLink: "https://github.com/nishalbarman/online-auto-part-shop",
+      description:
+        "Collaboratively led a team of four members in the end-to-end creation of a website dedicated to online auto part sales.",
+      techstack: [
+        "Vannila JavaScript",
+        "Json Mock Server",
+        "HTML, CSS",
+        "Splide",
+      ],
+    },
+    {
+      imageUrl: consultant,
+      visitLink: "https://webconsultant-s.netlify.app/",
+      title: "WebService Consultant",
+      githubLink: "https://github.com/nishalbarman/webservice-consultant",
+      description:
+        "Single-page fully responsive fronend project using ReactJS with a simple backend to recieve the messages.",
+      techstack: ["ReactJS", "ExpressJS", "ChakraUI"],
+    },
+  ];
 
   return (
     <>
@@ -381,156 +428,9 @@ function HomePage() {
       <div id="projects" ref={projectRef} className={styles.services_wrapper}>
         <p className={styles.service_heading}>Projects</p>
         <div className={styles.grid_section}>
-          <Tilt>
-            <div className={`${styles.service_card} project-card`}>
-              <img
-                src={secret_message}
-                alt=""
-                style={{ marginBottom: "30px" }}
-              />
-              <div className={styles.service_body}>
-                <p className="project-title">
-                  <a
-                    className="project-deployed-link"
-                    href="https://secret-msg-test.netlify.app/"
-                    target="_blank">
-                    Secret Messaging
-                  </a>
-                </p>
-                <a
-                  className="project-github-link"
-                  href="https://github.com/nishalbarman/secret-message-react"
-                  target="_blank">
-                  Gitub Link
-                </a>
-                <p className="project-description">
-                  A comprehensive full-stack project that enables users to
-                  register and share their unique links to receive anonymous
-                  messages.
-                </p>
-
-                <div
-                  className={`${styles.tech_stack_outer} project-tech-stack`}>
-                  <p>Tech Stack</p>
-                  <ul className="">
-                    <li>ReactJS</li>
-                    <li>ExpressJS</li>
-                    <li>MongoDB</li>
-                    <li>socket.io</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Tilt>
-          <Tilt>
-            <div className={`${styles.service_card} project-card`}>
-              <img
-                src={react_news_app}
-                alt=""
-                style={{ marginBottom: "30px" }}
-              />
-              <div className={styles.service_body}>
-                <p className="project-title">
-                  <a
-                    className="project-deployed-link"
-                    href="https://nishalbarman.github.io/react-newss-app/"
-                    target="_blank">
-                    Axom News
-                  </a>
-                </p>
-                <a
-                  className="project-github-link"
-                  href="https://github.com/nishalbarman/react-newss-app"
-                  target="_blank">
-                  Gitub Link
-                </a>
-                <p className="project-description">
-                  Crafted a single-page fronend project using ReactJS. Leveraged
-                  the Context API for state management, ensuring seamless data
-                  handling.
-                </p>
-                <div
-                  className={`${styles.tech_stack_outer} project-tech-stack`}>
-                  <p>Tech Stack</p>
-                  <ul className="">
-                    <li>ReactJS</li>
-                    <li>Json Mock Server</li>
-                    <li>HTML, CSS</li>
-                    <li>Swiper JS</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Tilt>
-          <Tilt>
-            <div className={`${styles.service_card} project-card`}>
-              <img src={auto_part} alt="" style={{ marginBottom: "30px" }} />
-              <div className={styles.service_body}>
-                <p className="project-title">
-                  <a
-                    className="project-deployed-link"
-                    href="https://auto-part.netlify.app/"
-                    target="_blank">
-                    Online Auto Part Shop
-                  </a>
-                </p>
-                <a
-                  className="project-github-link"
-                  href="https://github.com/nishalbarman/online-auto-part-shop"
-                  target="_blank">
-                  Gitub Link
-                </a>
-                <p className="project-description">
-                  Collaboratively led a team of four members in the end-to-end
-                  creation of a website dedicated to online auto part sales.
-                </p>
-                <div
-                  className={`${styles.tech_stack_outer} project-tech-stack`}>
-                  <p>Tech Stack</p>
-                  <ul className="">
-                    <li>Vannila JavaScript</li>
-                    <li>Json Mock Server</li>
-                    <li>HTML, CSS</li>
-                    <li>Splide</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Tilt>
-          <Tilt>
-            <div className={`${styles.service_card} project-card`}>
-              <img src={consultant} alt="" style={{ marginBottom: "30px" }} />
-              <div className={styles.service_body}>
-                <p className="project-title">
-                  <a
-                    className="project-deployed-link"
-                    href="https://webconsultant-s.netlify.app/"
-                    target="_blank">
-                    WebService Consultant
-                  </a>
-                </p>
-                <a
-                  className="project-github-link"
-                  href="https://github.com/nishalbarman/webservice-consultant"
-                  target="_blank">
-                  Gitub Link
-                </a>
-                <p className="project-description">
-                  Single-page fully responsive fronend project using ReactJS
-                  with a simple backend to recieve the messages.
-                </p>
-                <div
-                  className={`${styles.tech_stack_outer} project-tech-stack`}>
-                  <p>Tech Stack</p>
-                  <ul className="">
-                    <li>ReactJS</li>
-                    <li>ExpressJS</li>
-                    <li>ChakraUI</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Tilt>
+          {projects.map((item) => (
+            <ServiceCard {...item} />
+          ))}
         </div>
       </div>
 
