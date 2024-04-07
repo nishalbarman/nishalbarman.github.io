@@ -321,14 +321,31 @@ function HomePage() {
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
+              src="https://www.typescriptlang.org/images/branding/logo-grouping.svg"
+              alt=""
+            />
+            <p className="skills-card-name">TypeScript</p>
+            <p>
+              TypeScript is a free and open-source high-level programming
+              language developed by Microsoft that adds static typing with
+              optional type annotations to JavaScript. It is designed for the
+              development of large applications and transpiles to JavaScript.
+            </p>
+          </div>
+
+          <div className={`${styles.skills_card} skills-card`}>
+            <img
+              className="skills-card-img"
               src="https://christianbiadnes.com/assets/react-861e5e86.svg"
               alt=""
             />
             <p className="skills-card-name">React JS</p>
             <p>
-              JavaScript is a scripting language that enables you to create
-              dynamically updating content, control multimedia, animate images,
-              and pretty much everything else.
+              React is a free and open-source front-end JavaScript library for
+              building user interfaces based on components. It is maintained by
+              Meta and a community of individual developers and companies. React
+              can be used to develop single-page, mobile, or server-rendered
+              applications with frameworks like Next.js.
             </p>
           </div>
 
@@ -340,9 +357,11 @@ function HomePage() {
             />
             <p className="skills-card-name">Redux</p>
             <p>
-              JavaScript is a scripting language that enables you to create
-              dynamically updating content, control multimedia, animate images,
-              and pretty much everything else.
+              Redux is an open-source JavaScript library for managing and
+              centralizing application state. It is most commonly used with
+              libraries such as React or Angular for building user interfaces.
+              Similar to Facebook's Flux architecture, it was created by Dan
+              Abramov and Andrew Clark.
             </p>
           </div>
 
@@ -354,9 +373,11 @@ function HomePage() {
             />
             <p className="skills-card-name">Express</p>
             <p>
-              JavaScript is a scripting language that enables you to create
-              dynamically updating content, control multimedia, animate images,
-              and pretty much everything else.
+              Express.js, or simply Express, is a back end web application
+              framework for building RESTful APIs with Node.js, released as free
+              and open-source software under the MIT License. It is designed for
+              building web applications and APIs. It has been called the de
+              facto standard server framework for Node.js
             </p>
           </div>
 
@@ -368,9 +389,11 @@ function HomePage() {
             />
             <p className="skills-card-name">Node JS</p>
             <p>
-              JavaScript is a scripting language that enables you to create
-              dynamically updating content, control multimedia, animate images,
-              and pretty much everything else.
+              Node.js is a cross-platform, open-source JavaScript runtime
+              environment that can run on Windows, Linux, Unix, macOS, and more.
+              Node.js runs on the V8 JavaScript engine, and executes JavaScript
+              code outside a web browser. Node.js lets developers use JavaScript
+              to write command line tools and for server-side scripting.
             </p>
           </div>
 
@@ -382,9 +405,9 @@ function HomePage() {
             />
             <p className="skills-card-name">Redis</p>
             <p>
-              JavaScript is a scripting language that enables you to create
-              dynamically updating content, control multimedia, animate images,
-              and pretty much everything else.
+              Redis is a formerly open-source, now "source available", in-memory
+              storage, used as a distributed, in-memory key–value database,
+              cache and message broker, with optional durability.
             </p>
           </div>
 
@@ -396,9 +419,10 @@ function HomePage() {
             />
             <p className="skills-card-name">Socket.io</p>
             <p>
-              JavaScript is a scripting language that enables you to create
-              dynamically updating content, control multimedia, animate images,
-              and pretty much everything else.
+              Socket.IO is an event-driven library for real-time web
+              applications. It enables real-time, bi-directional communication
+              between web clients and servers. It consists of two components: a
+              client, and a server. Both components have a nearly identical API.
             </p>
           </div>
 
@@ -470,6 +494,7 @@ function HomePage() {
         </div>
 
         <GitHubCalendar
+          theme={"dark"}
           username="nishalbarman"
           labels={{
             totalCount: "{{count}} contributions in the last half year",
