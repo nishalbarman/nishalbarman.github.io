@@ -305,7 +305,7 @@ function HomePage() {
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
-              src="https://www.typescriptlang.org/images/branding/logo-grouping.svg"
+              src="https://www.typescriptlang.org/favicon-32x32.png"
               alt=""
             />
             <p className="skills-card-name">TypeScript</p>
@@ -413,14 +413,16 @@ function HomePage() {
           <div className={`${styles.skills_card} skills-card`}>
             <img
               className="skills-card-img"
-              src="https://christianbiadnes.com/assets/github-c97b06ab.svg"
+              src="https://git-scm.com/images/logo@2x.png"
               alt=""
             />
-            <p className="skills-card-name">GitHub</p>
+            <p className="skills-card-name">GIT</p>
             <p>
-              JavaScript is a scripting language that enables you to create
-              dynamically updating content, control multimedia, animate images,
-              and pretty much everything else.
+              Git is a distributed version control system that tracks changes in
+              any set of computer files, usually used for coordinating work
+              among programmers who are collaboratively developing source code
+              during software development. Git's goals include speed, data
+              integrity, and support for distributed, non-linear workflows.
             </p>
           </div>
         </div>
