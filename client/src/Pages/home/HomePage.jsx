@@ -1,42 +1,26 @@
 import { useEffect, useState } from "react";
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  Image,
-  Spacer,
-  StackDivider,
-} from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import React, { useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import styles from "./HomePage.module.css";
 import axios from "axios";
-import { ImSortAlphaAsc, ImSpinner10 } from "react-icons/im";
 import { useToast } from "@chakra-ui/react";
 import my_image from "../../Images/myimage.png";
 import secret_message from "../../Images/projects/secret_message.png";
 import react_news_app from "../../Images/projects/news.png";
 import auto_part from "../../Images/projects/auto_part.png";
 import consultant from "../../Images/projects/consultant.png";
-import { setRefer } from "../../Redux/smoothscroll/action-creators";
 import { useSelector } from "react-redux";
 import GitHubCalendar from "react-github-calendar";
 import Typewriter from "typewriter-effect";
 import "../contactus/Contact.css";
 import resume_pdf from "../../Resume/Nishal_Barman_Resume.pdf";
-import Tilt from "react-parallax-tilt";
 import ServiceCard from "../../Component/ServiceCards/ServiceCard";
 
 function HomePage() {
   const setRef = useSelector((state) => state.refer_reducer);
 
-  const navigate = useNavigate();
-
   var emailTester =
-    /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
-
-  const server_api = process.env.REACT_APP_SERVER_API;
+    "^[-!#$%&'*+/0-9=?A-Z^_a-z`{|}~](.?[-!#$%&'*+/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*.?[a-zA-Z0-9])*.[a-zA-Z](-?[a-zA-Z0-9])+$";
 
   const [sending, setSending] = useState(false);
 
@@ -474,6 +458,7 @@ function HomePage() {
             <img
               id="github-streak-stats"
               src="https://github-readme-streak-stats.herokuapp.com?user=nishalbarman&date_format=j%20M%5B%20Y%5D&theme=dark"
+              alt="github-stats"
             />
           </picture>
 
@@ -487,6 +472,7 @@ function HomePage() {
               media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
             />
             <img
+              alt="github-stats"
               id="github-stats-card"
               src="https://github-readme-stats.vercel.app/api?username=nishalbarman&theme=dark"
             />
@@ -494,7 +480,10 @@ function HomePage() {
         </div>
 
         <GitHubCalendar
-          theme={"dark"}
+          className=""
+          theme={{
+            dark: ["#d1b194", "#fc7905"],
+          }}
           username="nishalbarman"
           labels={{
             totalCount: "{{count}} contributions in the last half year",
@@ -511,6 +500,7 @@ function HomePage() {
             media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
           />
           <img
+            alt="github-stats"
             id="github-top-langs"
             src="https://github-readme-stats.vercel.app/api/top-langs/?username=nishalbarman&layout=compact&theme=dark"
           />

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { Button, useStepContext } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
 import resume_pdf from "../../Resume/Nishal_Barman_Resume.pdf";
 import { setUseRefs } from "../../Redux/smoothscroll/action-creators";
 
-function Navbar({ isWhiteBackground, isOfferVisible }) {
+function Navbar() {
   const dispatch = useDispatch();
 
   const [homeRef, setHomeRef] = useState(null);
@@ -26,8 +25,7 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
   const [colorChange, setColorchange] = useState(false);
   const [sideBarHidden, setSideBarHidden] = useState(null);
 
-  const [navbarHide, setNavbarHidden] = useState(false);
-  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [navbarHide] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,16 +36,6 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
     } else {
       setColorchange(true);
     }
-
-    // let st = window.scrollY || document.documentElement.scrollTop;
-    // if (st > lastScrollTop) {
-    //   // downscroll code
-    //   if (!navbarHide) setNavbarHidden(true);
-    // } else if (st < lastScrollTop) {
-    //   // upscroll code
-    //   setNavbarHidden(false);
-    // } // else was horizontal scroll
-    // setLastScrollTop(st <= 0 ? 0 : st); // For Mobile or negative scrolling
   });
 
   const handleShowSideMenu = () => {
@@ -79,7 +67,7 @@ function Navbar({ isWhiteBackground, isOfferVisible }) {
   useEffect(() => {
     document.documentElement.scrollTop = 0;
     dispatch(setUseRefs(setRefer));
-  }, []);
+  }, []); // eslint-disable-line no-use-before-define
 
   return (
     <>
