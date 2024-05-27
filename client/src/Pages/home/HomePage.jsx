@@ -527,7 +527,7 @@ function HomePage() {
       </div>
 
       <Box my={"45px"}></Box>
-      <div id="contact" ref={contactRef} className="container">
+      <div id="contact" ref={contactRef} className="container mx-auto">
         <div className="form">
           <div className="formHeader">
             {/* title anf ptompt here */}
