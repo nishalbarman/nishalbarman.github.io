@@ -59,7 +59,7 @@ function Navbar() {
     link.href = resume_pdf;
     link.click();
     window.open(
-      "https://drive.google.com/file/d/1-KMU_12MvQxKNcpJDLcbkToBNgBxe5GY/view?usp=sharing",
+      "https://drive.google.com/file/d/1bj3Jjg6zgzek7AINqIMJj38LM5SlI4YI/view?usp=sharing",
       "_blank"
     );
   };
@@ -125,6 +125,7 @@ function Navbar() {
               <Link
                 onClick={(e) => {
                   e.preventDefault();
+                  navigate("/");
                   homeRef?.current?.scrollIntoView({ behavior: "smooth" });
                 }}
                 // className={`${
@@ -136,6 +137,7 @@ function Navbar() {
               <Link
                 onClick={(e) => {
                   e.preventDefault();
+                  navigate("/");
                   aboutRef?.current?.scrollIntoView({ behavior: "smooth" });
                   console.log("Kon hai ye =>", aboutRef);
                 }}
@@ -149,6 +151,7 @@ function Navbar() {
               <Link
                 onClick={(e) => {
                   e.preventDefault();
+                  navigate("/");
                   skillsRef?.current?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className={`${
@@ -161,6 +164,7 @@ function Navbar() {
               <Link
                 onClick={(e) => {
                   e.preventDefault();
+                  navigate("/");
                   projectRef?.current?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className={`${
@@ -174,6 +178,7 @@ function Navbar() {
               <Link
                 onClick={(e) => {
                   e.preventDefault();
+                  navigate("/");
                   contactRef?.current?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className={`${
@@ -213,6 +218,7 @@ function Navbar() {
         <Link
           onClick={(e) => {
             e.preventDefault();
+            navigate("/");
             homeRef?.current?.scrollIntoView({ behavior: "smooth" });
             handleLinkClick();
           }}
@@ -226,6 +232,7 @@ function Navbar() {
         <Link
           onClick={(e) => {
             e.preventDefault();
+            navigate("/");
             aboutRef?.current?.scrollIntoView({ behavior: "smooth" });
             console.log("Kon hai ye =>", aboutRef);
             handleLinkClick();
@@ -239,6 +246,7 @@ function Navbar() {
         <Link
           onClick={(e) => {
             e.preventDefault();
+            navigate("/");
             skillsRef?.current?.scrollIntoView({ behavior: "smooth" });
             handleLinkClick();
           }}
@@ -253,6 +261,7 @@ function Navbar() {
         <Link
           onClick={(e) => {
             e.preventDefault();
+            navigate("/");
             projectRef?.current?.scrollIntoView({ behavior: "smooth" });
             handleLinkClick();
           }}
@@ -267,6 +276,7 @@ function Navbar() {
         <Link
           onClick={(e) => {
             e.preventDefault();
+            navigate("/");
             contactRef?.current?.scrollIntoView({ behavior: "smooth" });
             handleLinkClick();
           }}

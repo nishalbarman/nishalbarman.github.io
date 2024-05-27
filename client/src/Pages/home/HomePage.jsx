@@ -9,6 +9,7 @@ import secret_message from "../../Images/projects/secret_message.png";
 import react_news_app from "../../Images/projects/news.png";
 import auto_part from "../../Images/projects/auto_part.png";
 import consultant from "../../Images/projects/consultant.png";
+import ecommerce_mobile_app from "../../Images/projects/ecommerce_mobile_app.png";
 import { useSelector } from "react-redux";
 import GitHubCalendar from "react-github-calendar";
 import Typewriter from "typewriter-effect";
@@ -125,6 +126,22 @@ function HomePage() {
   }, [setRef]);
 
   const projects = [
+    {
+      imageUrl: `${ecommerce_mobile_app}`,
+      title: "Ecommerce Mobile App with Admin Panel",
+      visitLink: "/renting-details-page",
+      githubLink: "https://github.com/nishalbarman/renting-app",
+      description:
+        "This e-commerce project consists of a comprehensive platform including an Admin Panel and a Native Application. The admin panel, built with React.js, allows for efficient management of orders, products, and rental centers. The native application, developed using Expo, offers users a seamless shopping experience with advanced features such as search",
+      techstack: [
+        "Expo",
+        "React Native",
+        "ReactJS",
+        "ExpressJS",
+        "MongoDB",
+        "NodeJS",
+      ],
+    },
     {
       imageUrl: `${secret_message}`,
       title: "Secret Messaging",

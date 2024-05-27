@@ -17,7 +17,11 @@ function ServiceCard({
         <img
           src={imageUrl}
           alt="project_image"
-          style={{ marginBottom: "30px" }}
+          style={{
+            marginBottom: "30px",
+            objectFit: "contain",
+            aspectRatio: "16/9",
+          }}
         />
         <div className={styles.service_body}>
           <p
