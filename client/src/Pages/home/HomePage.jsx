@@ -143,6 +143,20 @@ function HomePage() {
       ],
     },
     {
+      imageUrl: auto_part,
+      title: "Online Auto Part Shop",
+      visitLink: "https://auto-part.netlify.app/",
+      githubLink: "https://github.com/nishalbarman/online-auto-part-shop",
+      description:
+        "Collaboratively led a team of four members in the end-to-end creation of a website dedicated to online auto part sales.",
+      techstack: [
+        "Vannila JavaScript",
+        "Json Mock Server",
+        "HTML, CSS",
+        "Splide",
+      ],
+    },
+    {
       imageUrl: `${secret_message}`,
       title: "Secret Messaging",
       visitLink: "https://secret-msg-test.netlify.app/",
@@ -162,20 +176,6 @@ function HomePage() {
       techstack: ["ReactJS", "Json Mock Server", "HTML, CSS", "Swiper JS"],
     },
 
-    {
-      imageUrl: auto_part,
-      title: "Online Auto Part Shop",
-      visitLink: "https://auto-part.netlify.app/",
-      githubLink: "https://github.com/nishalbarman/online-auto-part-shop",
-      description:
-        "Collaboratively led a team of four members in the end-to-end creation of a website dedicated to online auto part sales.",
-      techstack: [
-        "Vannila JavaScript",
-        "Json Mock Server",
-        "HTML, CSS",
-        "Splide",
-      ],
-    },
     {
       imageUrl: consultant,
       visitLink: "https://webconsultant-s.netlify.app/",
