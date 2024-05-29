@@ -2,6 +2,7 @@ const { Router } = require("express");
 const { Message, User } = require("../mongo/models");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
+const { sendMail } = require("../helper/sendEmail");
 
 const secret = process.env.SECRET || "";
 
@@ -110,6 +111,15 @@ router.post("/create", async (req, res) => {
   try {
     const message = new Message(req.body);
     console.log(message);
+
+    sendMail({
+      from: "Nishal Portfolio",
+      sender: "nishalexperiments+portfolio@gmail.com",
+      to: "nishalbarmann@gmail.com",
+      subject: "You got one new message from your portfolio",
+      html: `<div><p>Name: ${message.name}</p><p>Email: ${message.email}</p><p>Phone: ${message.phone}</p><p>Message: ${message.message}</p></div>`,
+    });
+
     await message.save();
     res.send({ status: true, message: "Message submitted!" });
   } catch (err) {
