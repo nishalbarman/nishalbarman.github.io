@@ -42,7 +42,7 @@ function HomePage() {
       error.push("Name required and must be of 3 characters or more!");
     }
 
-    if (!formData.email || !emailTester.test(formData.email)) {
+    if (!formData.email || !formData?.email?.match(emailTester)) {
       error.push("Email must be valid!");
     }
 
@@ -155,6 +155,16 @@ function HomePage() {
         "HTML, CSS",
         "Splide",
       ],
+    },
+    {
+      imageUrl:
+        "https://github.com/monurajputrko/Voyawander/blob/main/images/homepage.png?raw=true",
+      title: "Voyawander: A travel booking website",
+      visitLink: "https://voyawander-cw.netlify.app/",
+      githubLink: "https://github.com/monurajputrko/Voyawander.git",
+      description:
+        "Voyawander is a travel package booking website that allows users to explore a variety of exciting travel options. From international tours to popular destinations, Voyawander offers a seamless experience for planning your next adventure. Join our vibrant travel community and embark on a journey of discovery! 🌎✈️",
+      techstack: ["ReactJS", "Chakra UI", "React-Redux", "Firebase"],
     },
     {
       imageUrl: `${secret_message}`,

@@ -35,7 +35,7 @@ function Contact() {
       error.push("Name required and must be of 3 characters or more!");
     }
 
-    if (!formData.email || !emailTester.test(formData.email)) {
+    if (!formData.email || !formData?.email?.match(emailTester)) {
       error.push("Email must be valid!");
     }
 
